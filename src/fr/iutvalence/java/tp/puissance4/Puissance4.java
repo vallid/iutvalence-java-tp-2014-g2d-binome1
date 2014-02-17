@@ -5,11 +5,16 @@ package fr.iutvalence.java.tp.puissance4;
  */
 public class Puissance4
 {
-
+	
+	public Puissance4()
+	{
+		this.Joueur;
+		this.Grille;
+	}
+	
 	public void jouer()
 	{
-		// TODO Auto-generated method stub
-		
+		System.out.println("la partie va commencer");
 	}
 	
 }

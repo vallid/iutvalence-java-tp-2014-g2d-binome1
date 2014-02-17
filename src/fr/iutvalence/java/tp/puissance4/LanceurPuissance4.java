@@ -14,7 +14,6 @@ public class LanceurPuissance4
 	{
 		Puissance4 jeu; 
 		jeu = new Puissance4();
-		
 		jeu.jouer();
 	}
 }
