@@ -8,13 +8,30 @@ package fr.iutvalence.java.tp.puissance4;
 public class Puissance4
 {
 	/**
-	 * crée une nouvelle partie de puissance4	 * 
+	 * joueur 1
+	 */
+	public final Joueur joueur1;
+	/**
+	 * joueur 2
+	 */
+	public final Joueur joueur2;
+	/**
+	 * plateau du jeu 
+	 */
+	public final Grille plateau;
+	
+	
+	
+	/**
+	 * crée une nouvelle partie de puissance4 
 	 * 
 	 */
 	public Puissance4()
 	{
-		this.Joueur;
-		this.Grille;
+		this.joueur1= new Joueur();
+		this.joueur2= new Joueur();
+		this.plateau= new Grille();
+		
 	}
 	
 	/**
