@@ -1,8 +1,7 @@
 package fr.iutvalence.java.tp.puissance4;
 
-//TODO réécrire le commentaire (plus concis, pplus précis)
 /**
- * création de la class Grille qui définit la grille 
+ * définit les catacteristiques de la grille de Puissance4
  * @author vallid
  *
  */
