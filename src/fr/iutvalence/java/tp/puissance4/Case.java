@@ -6,7 +6,16 @@ package fr.iutvalence.java.tp.puissance4;
  */
 public class Case
 {
-	public  final int numeroDeLigne;
-	public  final int numeroDeColonne;
-	
+	/**
+	 *permet de savoir si la case est occupée 
+	 */
+	public boolean estOccupe;
+	/**
+	 * permet de créer une case non occupée 
+	 */
+	public Case()
+	{
+		this.estOccupe = false;
+		
+	}
 }
