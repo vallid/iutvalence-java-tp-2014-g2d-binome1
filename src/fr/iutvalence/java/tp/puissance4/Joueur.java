@@ -7,10 +7,4 @@ package fr.iutvalence.java.tp.puissance4;
  */
 public class Joueur
 {
-
-	/**
-	 * numero du joueur 
-	 */
-	public final int numeroJoueur;
-	
 }
