@@ -17,12 +17,12 @@ public class Jeton
 	/**
 	 * Couleur du jeton
 	 */
-	private boolean couleur;
+	private Etat etatJeton;
 
 	// TODO (fait) écrire le constructeur sans paramètre
 	public Jeton()
 	{
-		this.couleur = JAUNE;
+		this.etatJeton = Etat.JAUNE;
 
 	}
 }
