@@ -1,27 +1,28 @@
 package fr.iutvalence.java.tp.puissance4;
 
-// TODO écrire un commentaire plus précis (cette classe ne crée rien)
+// TODO (fait) écrire un commentaire plus précis (cette classe ne crée rien)
 /**
- * création des jetons
+ * défini les caractéristiques du Jeton
  * 
  * @author vallid
  * 
  */
 public class Jeton
 {
-	// TODO réécrire les constantes sous la forme d'une énumération "Couleur"
-	/**
-	 * differencie les 2 Couleurs de jeton
-	 */
-	public static final boolean JAUNE = true;
-	public static final boolean ROUGE = false;
 
-	// TODO l'attribut ne devrait pas être visible
+	// TODO (fait)réécrire les constantes sous la forme d'une énumération
+	// "Couleur"
+
+	// TODO (fait) l'attribut ne devrait pas être visible
 	/**
 	 * Couleur du jeton
 	 */
-	public final boolean couleur;
-	
-	// TODO écrire le constructeur sans paramètre
+	private boolean couleur;
 
+	// TODO (fait) écrire le constructeur sans paramètre
+	public Jeton()
+	{
+		this.couleur = JAUNE;
+
+	}
 }
