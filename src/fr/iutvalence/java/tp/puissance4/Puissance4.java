@@ -7,27 +7,27 @@ package fr.iutvalence.java.tp.puissance4;
  */
 public class Puissance4
 {
-	// TODO l'attribut ne devrait pas être visible
+	// TODO (fait) l'attribut ne devrait pas être visible
 	/**
 	 * joueur 1
 	 */
-	public final Joueur joueur1;
+	private final Joueur joueur1;
 
-	// TODO l'attribut ne devrait pas être visible
+	// TODO (fait) l'attribut ne devrait pas être visible
 	/**
 	 * joueur 2
 	 */
-	public final Joueur joueur2;
+	private final Joueur joueur2;
 	
-	// TODO l'attribut ne devrait pas être visible
+	// TODO (fait)l'attribut ne devrait pas être visible
 	/**
 	 * plateau du jeu 
 	 */
-	public final Grille plateau;
+	private final Grille plateau;
 	
-	// TODO écrire un commentaire plus précis 
+	// TODO (fait) écrire un commentaire plus précis 
 	/**
-	 * crée une nouvelle partie de puissance4 
+	 * Permet de créer une nouvelle partie de puissance4 sur une grille de 7*6
 	 * 
 	 */
 	public Puissance4()
