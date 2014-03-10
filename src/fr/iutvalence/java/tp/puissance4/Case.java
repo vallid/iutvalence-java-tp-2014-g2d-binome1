@@ -2,24 +2,26 @@ package fr.iutvalence.java.tp.puissance4;
 
 // TODO(fait) écrire un commentaire plus précis
 /**
- * Permet de créer les cases de la Grille du jeu
- * et savoir  si une case est occupée ou non 
+ * Permet de créer les cases de la Grille du jeu et savoir si une case est
+ * occupée ou non
+ * 
  * @author vallid
- *
+ * 
  */
 public class Case
 {
 	/**
-	 * permet de savoir si la case est occupée 
+	 * permet de savoir si la case est occupée
 	 */
 	// TODO (fait) l'attribut ne devrait pas être visible
-	private boolean estOccupe;
-	
+	private Etat etatCase;
+
 	/**
-	 * permet de créer une case non occupée 
+	 * permet de créer une case non occupée
 	 */
 	public Case()
 	{
-		this.estOccupe = false;	
+		this.etatCase = Etat.NONOCCUPE;
 	}
+
 }
