@@ -23,9 +23,9 @@ public class Grille
 	 */
 	public Case[][] cases;
 
-	// TODO écrire un commentaire plus précis
+	// TODO (fait) écrire un commentaire plus précis
 	/**
-	 * Crée une nouvelle grille de taille par defaut 
+	 * Permet de créer une grille de taille par defaut 7*6
 	 */
 	public Grille()
 	{
@@ -33,9 +33,9 @@ public class Grille
 		 
 	}
 	
-	// TODO écrire un commentaire plus précis (il n'y a pas d'utilisateur)
+	// TODO (fait) écrire un commentaire plus précis (il n'y a pas d'utilisateur)
 	/**
-	 * crée une nouvelle grille de taille choisie par l'utilisateur 
+	 * permet de créer une nouvelle grille de taille defini en parametre  
 	 * @param longueur longueur choisie
 	 * @param largeur largeur choisie 
 	 */
