@@ -16,8 +16,4 @@ public class Joueur
 
 	}
 
-	public poserJeton(int colonne)
-	{
-		
-	}
 }

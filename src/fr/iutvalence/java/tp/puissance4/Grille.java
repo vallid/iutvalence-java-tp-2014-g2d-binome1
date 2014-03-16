@@ -1,5 +1,6 @@
 package fr.iutvalence.java.tp.puissance4;
 
+// TODO corriger le commentaire
 /**
  * les caracteristiques de la grille de Puissance4
  * 
@@ -23,7 +24,7 @@ public class Grille
 	 */
 	public Case[][] cases;
 
-	// TODO (fait) écrire un commentaire plus précis
+	// TODO écrire un commentaire plus précis (comment est initialisée la grille ?)
 	/**
 	 * Permet de créer une grille de taille par defaut 7*6
 	 */
@@ -33,7 +34,7 @@ public class Grille
 		 
 	}
 	
-	// TODO (fait) écrire un commentaire plus précis (il n'y a pas d'utilisateur)
+	// TODO écrire un commentaire plus précis (comment est initialisée la grille ?)
 	/**
 	 * permet de créer une nouvelle grille de taille defini en parametre  
 	 * @param longueur longueur choisie
