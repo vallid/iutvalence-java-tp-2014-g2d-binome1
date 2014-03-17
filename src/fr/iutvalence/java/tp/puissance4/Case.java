@@ -13,7 +13,8 @@ public class Case
 	 * permet de savoir l'état de la case
 	 */
 	// TODO (fait) l'attribut ne devrait pas être visible
-	private Etat etatCase;
+	
+	private EtatsCase etatCase;
 	
 	/**
 	 * permet de créer une case non occupée
@@ -24,7 +25,7 @@ public class Case
 		this.etatCase = Etat.NONOCCUPE;
 	}
 	
-	public Etat obtenirEtat()
+	public EtatsCase obtenirEtat()
 	{
 		return this.etatCase;
 	}

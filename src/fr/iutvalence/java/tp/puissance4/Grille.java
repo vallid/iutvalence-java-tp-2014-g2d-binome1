@@ -41,9 +41,44 @@ public class Grille
 	 * @param longueur longueur choisie
 	 * @param largeur largeur choisie 
 	 */
+	
 	public Grille (int longueur,int largeur)
 	{
 		this.cases = new Case [longueur][largeur];
+	}
+	
+	/**
+	 * Permet d'obtenir une case à la colonne et à la ligne indiqués en paramètre
+	 * @param colonne : Colonne de la case à obtenir
+	 * @param ligne : Ligne de la case à Obtenir
+	 * @return
+	 */
+	public Case obtenirCase(int colonne, int ligne)
+	{
+		return this.cases[colonne][ligne];
+	}
+	
+	/**
+	 * Permet de représenter le puissance 4 en ASCII ART
+	 * 
+	 * @return
+	 */
+	
+	public String ToString()
+	{
+		String puissance4EnAscii = "";
+		
+		for (int ligne=0;ligne<LARGEUR_GRILLE_DEFAUT;ligne++)
+		{
+			for (int colonne=0;colonne<LONGUEUR_GRILLE_DEFAUT;colonne++)
+			{
+				puissance4EnAscii += this.obtenirCase(colonne, ligne).obtenirEtat();
+				if (colonne=6)
+				{
+					puissance4EnAscii += "/n";
+				}
+			}
+		}
 	}
 }
 	
