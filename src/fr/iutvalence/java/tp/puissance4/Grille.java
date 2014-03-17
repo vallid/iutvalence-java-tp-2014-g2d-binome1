@@ -74,7 +74,7 @@ public class Grille
 			{
 				puissance4EnAscii += this.obtenirCase(colonne, ligne).obtenirEtat();
 				
-				if (colonne=6)
+				if (colonne == 6)
 				{
 					puissance4EnAscii += "\n";
 				}
