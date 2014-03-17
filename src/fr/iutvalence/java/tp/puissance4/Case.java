@@ -25,6 +25,10 @@ public class Case
 		this.etatCase = EtatsCase.NONOCCUPE;
 	}
 	
+	/**
+	 * Permet d'obtenir l'état de la case
+	 * @return
+	 */
 	public EtatsCase obtenirEtat()
 	{
 		return this.etatCase;
