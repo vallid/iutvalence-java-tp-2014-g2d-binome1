@@ -80,6 +80,7 @@ public class Grille
 				}
 			}
 		}
+		return puissance4EnAscii;
 	}
 }
 	
