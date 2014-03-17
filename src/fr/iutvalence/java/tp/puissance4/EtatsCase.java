@@ -23,4 +23,15 @@ public enum EtatsCase
 	 * La case n'est occupée par aucun jeton
 	 */
 	NONOCCUPE;
+	
+	/**
+	 * Attribue une représentation en ASCII à chaque état
+	 */
+	public String toString()
+{
+if (this == ROUGE) return "R";
+if (this == JAUNE) return "J";
+else return "N";
+}
+	
 }

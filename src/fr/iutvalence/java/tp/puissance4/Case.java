@@ -22,7 +22,7 @@ public class Case
 	
 	public Case()
 	{
-		this.etatCase = Etat.NONOCCUPE;
+		this.etatCase = EtatsCase.NONOCCUPE;
 	}
 	
 	public EtatsCase obtenirEtat()

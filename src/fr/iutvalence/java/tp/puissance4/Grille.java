@@ -73,9 +73,10 @@ public class Grille
 			for (int colonne=0;colonne<LONGUEUR_GRILLE_DEFAUT;colonne++)
 			{
 				puissance4EnAscii += this.obtenirCase(colonne, ligne).obtenirEtat();
+				
 				if (colonne=6)
 				{
-					puissance4EnAscii += "/n";
+					puissance4EnAscii += "\n";
 				}
 			}
 		}
