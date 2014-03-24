@@ -30,7 +30,14 @@ public class Grille
 	public Grille()
 	{
 		 this.cases = new Case[LONGUEUR_GRILLE_DEFAUT][LARGEUR_GRILLE_DEFAUT];
-		 
+			
+		for(int ligne=0;ligne<LARGEUR_GRILLE_DEFAUT;ligne++)
+		{
+			for(int colonne=0;colonne<LONGUEUR_GRILLE_DEFAUT;colonne++)
+			{
+				this.cases[colonne][ligne]= new Case();
+			}
+		}
 	}
 	
 	// TODO (fait)écrire un commentaire plus précis (comment est initialisée la grille ?)
