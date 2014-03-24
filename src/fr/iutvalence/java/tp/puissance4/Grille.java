@@ -53,9 +53,9 @@ public class Grille
 	{
 		this.cases = new Case [longueur][largeur];
 		
-		for(int ligne=0;ligne<LARGEUR_GRILLE_DEFAUT;ligne++)
+		for(int ligne=0;ligne<largeur;ligne++)
 		{
-			for(int colonne=0;colonne<LONGUEUR_GRILLE_DEFAUT;colonne++)
+			for(int colonne=0;colonne<longueur;colonne++)
 			{
 				this.cases[colonne][ligne]= new Case();
 			}
