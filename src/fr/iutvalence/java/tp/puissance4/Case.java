@@ -33,5 +33,13 @@ public class Case
 	{
 		return this.etatCase;
 	}
-
+	
+	/**
+	 * Permet de changer l'état d'une case
+	 * @param nouvelEtat Etat de la case après la modification
+	 */
+	public void changerEtatCase(EtatsCase nouvelEtat)
+	{
+		this.etatCase = nouvelEtat;
+	}
 }
