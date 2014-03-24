@@ -51,7 +51,7 @@ public class Grille
 	 * Permet d'obtenir une case à la colonne et à la ligne indiqués en paramètre
 	 * @param colonne : Colonne de la case à obtenir
 	 * @param ligne : Ligne de la case à Obtenir
-	 * @return
+	 * @return La case
 	 */
 	public Case obtenirCase(int colonne, int ligne)
 	{
@@ -61,7 +61,7 @@ public class Grille
 	/**
 	 * Permet de représenter le puissance 4 en ASCII ART
 	 * 
-	 * @return
+	 * @return Représentation ASCII du Puissance 4
 	 */
 	
 	public String ToString()

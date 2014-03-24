@@ -27,7 +27,7 @@ public class Case
 	
 	/**
 	 * Permet d'obtenir l'état de la case
-	 * @return
+	 * @return L'état de la case
 	 */
 	public EtatsCase obtenirEtat()
 	{
