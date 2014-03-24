@@ -64,7 +64,7 @@ public class Grille
 	 * @return Représentation ASCII du Puissance 4
 	 */
 	
-	public String ToString()
+	public String afficherPlateau()
 	{
 		String puissance4EnAscii = "";
 		
@@ -72,7 +72,7 @@ public class Grille
 		{
 			for (int colonne=0;colonne<LONGUEUR_GRILLE_DEFAUT;colonne++)
 			{
-				puissance4EnAscii += this.obtenirCase(colonne, ligne).obtenirEtat();
+				puissance4EnAscii += this.obtenirCase(colonne, ligne).obtenirEtat().toString();
 				
 				if (colonne == 6)
 				{
