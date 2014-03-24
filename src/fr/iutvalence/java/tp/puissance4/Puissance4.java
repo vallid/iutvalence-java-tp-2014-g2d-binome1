@@ -41,6 +41,10 @@ public class Puissance4
 		System.out.println("la partie va commencer");
 	}
 	
+	public Grille obtenirGrille()
+	{
+		return this.plateau;
+	}
 	
 	 /**
 	 * Permet de poser un jeton dans une colonne de la grille.
@@ -50,11 +54,11 @@ public class Puissance4
 	private void poserJeton(EtatsCase couleur,int colonne)
 	{
 		int ligne=0;
-		while(plateau.obtenirCase(colonne, ligne).obtenirEtat()!=EtatsCase.NONOCCUPE);
+		while(this.plateau.obtenirCase(colonne, ligne).obtenirEtat()!=EtatsCase.NONOCCUPE);
 		{
 			ligne++;
 		}
-		plateau.obtenirCase(colonne, ligne).changerEtatCase(couleur);
+		this.plateau.obtenirCase(colonne, ligne).changerEtatCase(couleur);
 	}
 	
 }
