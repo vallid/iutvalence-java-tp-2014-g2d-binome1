@@ -45,6 +45,14 @@ public class Grille
 	public Grille (int longueur,int largeur)
 	{
 		this.cases = new Case [longueur][largeur];
+		
+		for(int ligne=0;ligne<LARGEUR_GRILLE_DEFAUT;ligne++)
+		{
+			for(int colonne=0;colonne<LONGUEUR_GRILLE_DEFAUT;colonne++)
+			{
+				this.cases[colonne][ligne]= new Case();
+			}
+		}
 	}
 	
 	/**
