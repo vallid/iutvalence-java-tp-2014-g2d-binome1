@@ -41,6 +41,10 @@ public class Puissance4
 		System.out.println("la partie va commencer");
 	}
 	
+	/**
+	 * Permet d'obtenir la grille du jeu
+	 * @return grille du jeu
+	 */
 	public Grille obtenirGrille()
 	{
 		return this.plateau;
