@@ -65,5 +65,4 @@ public class Puissance4
 		this.grille.changerEtatCase(numeroDeLigne, numeroDeColonne-1, couleur);
 		return true;
 	}
-
 }
