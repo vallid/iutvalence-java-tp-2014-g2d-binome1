@@ -41,6 +41,10 @@ public class Puissance4
 	{
 		System.out.println("la partie va commencer");
 		System.out.println(this.grille);
+		this.poserJeton(EtatCase.ROUGE, 2);
+		System.out.println(this.grille);
+		this.poserJeton(EtatCase.JAUNE, 2);
+		System.out.println(this.grille);
 	}
 
 	/**
@@ -50,15 +54,15 @@ public class Puissance4
 	 *            Couleur du jeton
 	 * @param numeroDeColonne
 	 *            Colonne où poser le jeton
+	 * @return True si le jeton peut être posé, ou False si la colonne est déjà pleine
 	 */
 	private boolean poserJeton(EtatCase couleur, int numeroDeColonne)
 	{
 		int numeroDeLigne;
-		for (numeroDeLigne=0;numeroDeLigne<Grille.NOMBRE_DE_LIGNES; numeroDeLigne++)
-			if (this.grille.obtenirCase(numeroDeLigne, numeroDeColonne) == EtatCase.VIDE) break;
-			numeroDeLigne++;
-		if (numeroDeLigne == Grille.NOMBRE_DE_LIGNES) return false;
-		this.grille.changerEtatCase(numeroDeLigne, numeroDeColonne, couleur);
+		for (numeroDeLigne=Grille.NOMBRE_DE_LIGNES-1;numeroDeLigne>=0;numeroDeLigne--)
+			if (this.grille.obtenirCase(numeroDeLigne, numeroDeColonne-1) == EtatCase.VIDE) break;	
+			if (numeroDeLigne == 0 && this.grille.obtenirCase(numeroDeLigne, numeroDeColonne-1) != EtatCase.VIDE) return false;
+		this.grille.changerEtatCase(numeroDeLigne, numeroDeColonne-1, couleur);
 		return true;
 	}
 
