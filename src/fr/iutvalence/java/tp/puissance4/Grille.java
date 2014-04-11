@@ -55,11 +55,10 @@ public class Grille
 		else return null;
 	}
 	
+
 	/**
-	 * Permet de changer l'état d'une case du plateau
-	 * @param numeroDeLigne numero de la ligne où se situe la case
-	 * @param numeroDeColonne numero de la colonne où se situe la case
-	 * @param nouvelEtat etat de la case après la modification
+	 * @param position Position de la case que l'on veut modifier
+	 * @param nouvelEtat Nouvel état de la case
 	 */
 	public void changerEtatCase(Position position, EtatCase nouvelEtat)
 	{
