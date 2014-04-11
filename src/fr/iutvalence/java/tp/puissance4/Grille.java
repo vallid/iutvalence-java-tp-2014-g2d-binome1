@@ -35,24 +35,23 @@ public class Grille
 
 		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++)
 			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++)
+			{
 				this.etatsDesCases[numeroDeLigne][numeroDeColonne] = EtatCase.VIDE;
+			}
+				
 	}
 
 	/**
-	 * Permet d'obtenir une case à la colonne et à la ligne indiqués en
+	 * Permet d'obtenir une case à la position indiquée en
 	 * paramètre
-	 * 
-	 * @param numeroDeLigne
-	 *            : Colonne de la case à obtenir
-	 * @param numeroDeColonne
-	 *            : Ligne de la case à Obtenir
+	 * @param position : Position de la case à obtenir
 	 * @return La case
 	 */
-	public EtatCase obtenirCase(int numeroDeLigne, int numeroDeColonne)
+	public EtatCase obtenirCase(Position position)
 	{
 		// TODO(fait) cas d'erreur ? soit return null, soit une exception
-		if (numeroDeLigne<NOMBRE_DE_LIGNES && numeroDeColonne<NOMBRE_DE_COLONNES)
-		return this.etatsDesCases[numeroDeLigne][numeroDeColonne];
+		if (position.obtenirLigne()<NOMBRE_DE_LIGNES && position.obtenirColonne()<NOMBRE_DE_COLONNES)
+		return this.etatsDesCases[position.obtenirLigne()][position.obtenirColonne()];
 		else return null;
 	}
 	
@@ -62,10 +61,10 @@ public class Grille
 	 * @param numeroDeColonne numero de la colonne où se situe la case
 	 * @param nouvelEtat etat de la case après la modification
 	 */
-	public void changerEtatCase(int numeroDeLigne, int numeroDeColonne, EtatCase nouvelEtat)
+	public void changerEtatCase(Position position, EtatCase nouvelEtat)
 	{
 		// TODO (Fait) à completer
-		this.etatsDesCases[numeroDeLigne][numeroDeColonne]=nouvelEtat;
+		this.etatsDesCases[position.obtenirLigne()][position.obtenirColonne()]=nouvelEtat;
 	}
 	/**
 	 * Permet de représenter le puissance 4 en ASCII ART
@@ -76,11 +75,15 @@ public class Grille
 	public String toString()
 	{
 		String puissance4EnAscii = "";
-
+		Position position = new Position(0,0);
 		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++)
 		{
 			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++)
-				puissance4EnAscii += this.obtenirCase(numeroDeLigne, numeroDeColonne);
+			{
+				position.changerColonne(numeroDeColonne);
+			    position.changerLigne(numeroDeLigne);
+				puissance4EnAscii += this.obtenirCase(position);
+			}
 			puissance4EnAscii += "\n";
 		}
 		return puissance4EnAscii;

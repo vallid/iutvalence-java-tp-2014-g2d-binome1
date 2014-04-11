@@ -45,6 +45,7 @@ public class Puissance4
 		System.out.println(this.grille);
 		this.poserJeton(EtatCase.JAUNE, 2);
 		System.out.println(this.grille);
+		
 	}
 
 	/**
@@ -58,11 +59,17 @@ public class Puissance4
 	 */
 	private boolean poserJeton(EtatCase couleur, int numeroDeColonne)
 	{
+		
 		int numeroDeLigne;
-		for (numeroDeLigne=Grille.NOMBRE_DE_LIGNES-1;numeroDeLigne>=0;numeroDeLigne--)
-			if (this.grille.obtenirCase(numeroDeLigne, numeroDeColonne-1) == EtatCase.VIDE) break;	
-			if (numeroDeLigne == 0 && this.grille.obtenirCase(numeroDeLigne, numeroDeColonne-1) != EtatCase.VIDE) return false;
-		this.grille.changerEtatCase(numeroDeLigne, numeroDeColonne-1, couleur);
+		Position position = new Position(0,0);
+		for (numeroDeLigne=Grille.NOMBRE_DE_LIGNES-1;numeroDeLigne>=-1;numeroDeLigne--)
+		{
+			position.changerColonne(numeroDeColonne);
+		    position.changerLigne(numeroDeLigne);
+			if (this.grille.obtenirCase(position) == EtatCase.VIDE) break;	
+		}
+			if (position.obtenirLigne() == -1) return false;
+		this.grille.changerEtatCase(position, couleur);
 		return true;
 	}
 }

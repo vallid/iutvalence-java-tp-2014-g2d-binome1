@@ -9,12 +9,12 @@ public class Position
 	/**
 	 * Numéro de Ligne de la position
 	 */
-	private final int numeroLigne;
+	private int numeroLigne;
 
 	/**
 	 * Numéro de Colonne de la position
 	 */
-	private final int numeroColonne;
+	private int numeroColonne;
 	
 	/**
 	 * Permet de créer une nouvelle position
@@ -43,5 +43,15 @@ public class Position
 	public int obtenirColonne()
 	{
 		return this.numeroColonne;
+	}
+	
+	public void changerColonne(int colonne)
+	{
+		this.numeroColonne=colonne;
+	}
+	
+	public void changerLigne(int ligne)
+	{
+		this.numeroLigne=ligne;
 	}
 }
