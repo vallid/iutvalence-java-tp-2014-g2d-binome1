@@ -45,11 +45,19 @@ public class Position
 		return this.numeroColonne;
 	}
 	
+	/**
+	 * Permet d'attribuer une nouvelle colonne à une position
+	 * @param colonne : Nouvelle colonne
+	 */
 	public void changerColonne(int colonne)
 	{
 		this.numeroColonne=colonne;
 	}
 	
+	/**
+	 * Permet d'attribuer une nouvelle ligne à une position
+	 * @param ligne : Nouvelle ligne
+	 */
 	public void changerLigne(int ligne)
 	{
 		this.numeroLigne=ligne;
