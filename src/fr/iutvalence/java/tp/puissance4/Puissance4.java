@@ -77,7 +77,7 @@ public class Puissance4
 	 * @param couleur Couleur à tester
 	 * @return True si la partie est gagnée
 	 */
-	public boolean estGagneeLigne(Position position, EtatCase couleur)
+	private boolean estGagneeLigne(Position position, EtatCase couleur)
 	{
 		int compteur=0;
 		while(this.grille.obtenirCase(position)==couleur)
@@ -102,7 +102,7 @@ public class Puissance4
 	 * @param couleur Couleur à Teset
 	 * @return True si la partie est gagnée
 	 */
-	public boolean estGagneeColonne(Position position ,EtatCase couleur)
+	private boolean estGagneeColonne(Position position ,EtatCase couleur)
 	{
 		int compteur=0;
 	while (this.grille.obtenirCase(position)==couleur)
@@ -121,7 +121,7 @@ public class Puissance4
 	 * @param couleur Couleur à tester
 	 * @return True si la partie est gagnée
 	 */
-	public boolean estGagnee(Position position ,EtatCase couleur)
+	private boolean estGagnee(Position position ,EtatCase couleur)
 	{
 		return this.estGagneeColonne(position, couleur)||this.estGagneeLigne(position, couleur);
 	}
