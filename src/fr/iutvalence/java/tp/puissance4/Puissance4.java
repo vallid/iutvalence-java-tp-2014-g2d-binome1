@@ -1,4 +1,5 @@
 package fr.iutvalence.java.tp.puissance4;
+import java.util.Scanner;
 
 /**
  * définition d'une partie de puissance 4
@@ -39,11 +40,31 @@ public class Puissance4
 	 */
 	public void jouer()
 	{
-		System.out.println("la partie va commencer");
+		Scanner saisieUtilisateur = new Scanner(System.in); 
+		
+		System.out.println("la partie va commencer. Joueur 1: Pions rouges, Joueur 2: Pions jaunes.");
 		System.out.println(this.grille);
-		if (this.estGagnee(this.poserJeton(EtatCase.ROUGE, 0)))
-			System.out.println("La partie est gagnée");
-		System.out.println(this.grille);
+		
+		while(true)
+		{
+			System.out.println("Joueur 1, entrez la colonne dans laquelle vous voulez poser un jeton");
+			int colonne = saisieUtilisateur.nextInt();
+			if (this.estGagnee(this.poserJeton(EtatCase.ROUGE, colonne)))
+			{
+				System.out.println("Le joueur 1 gagne la partie !");
+				break;
+			}
+			System.out.println(this.grille);
+			
+			System.out.println("Joueur 2, entrez la colonne dans laquelle vous voulez poser un jeton");
+			colonne = saisieUtilisateur.nextInt();
+			if (this.estGagnee(this.poserJeton(EtatCase.JAUNE, colonne)))
+			{
+				System.out.println("Le joueur 1 gagne la partie !");
+				break;
+			}
+			System.out.println(this.grille);
+		}
 	}
 
 	/**
