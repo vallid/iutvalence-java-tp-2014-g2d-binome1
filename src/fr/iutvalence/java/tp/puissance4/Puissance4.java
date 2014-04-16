@@ -41,10 +41,9 @@ public class Puissance4
 	{
 		System.out.println("la partie va commencer");
 		System.out.println(this.grille);
-		if (this.estGagneeColonne(this.poserJeton(EtatCase.ROUGE, 2),EtatCase.ROUGE)==true)
+		if (this.estGagnee(this.poserJeton(EtatCase.ROUGE, 0)))
 			System.out.println("La partie est gagnée");
 		System.out.println(this.grille);
-		
 	}
 
 	/**
@@ -54,75 +53,57 @@ public class Puissance4
 	 *            Couleur du jeton
 	 * @param numeroDeColonne
 	 *            Colonne où poser le jeton
-	 * @return True si le jeton peut être posé, ou False si la colonne est déjà pleine
+	 *
 	 */
 	private Position poserJeton(EtatCase couleur, int numeroDeColonne)
 	{
 		
-		int numeroDeLigne;
-		Position position = new Position(0,0);
-		for (numeroDeLigne=Grille.NOMBRE_DE_LIGNES-1;numeroDeLigne>=-1;numeroDeLigne--)
-		{
-			position.changerColonne(numeroDeColonne);
-		    position.changerLigne(numeroDeLigne);
-			if (this.grille.obtenirCase(position) == EtatCase.VIDE) break;	
-		}
-		this.grille.changerEtatCase(position, couleur);
-		return position;
-	}
-	
-	/**
-	 * Test si la partie est gagnée en ligne
-	 * @param position Position à teset
-	 * @param couleur Couleur à tester
-	 * @return True si la partie est gagnée
-	 */
-	private boolean estGagneeLigne(Position position, EtatCase couleur)
-	{
-		int compteur=0;
-		while(this.grille.obtenirCase(position)==couleur)
-		{
-			position.changerColonne(position.obtenirColonne()-1);
-		}
-		position.changerColonne(position.obtenirColonne()+1);
 		
-		while(this.grille.obtenirCase(position)==couleur)
+		for (int numeroDeLigne = this.grille.NOMBRE_DE_LIGNES-1; numeroDeLigne >=0; numeroDeLigne--)
 		{
-			compteur++;
-			position.changerColonne(position.obtenirColonne()+1);
+			Position position = new Position(numeroDeLigne, numeroDeColonne);
+			if (this.grille.obtenirCase(position)==EtatCase.VIDE)
+			{
+				this.grille.changerEtatCase(position, couleur);
+				return position;
+			}
 		}
+		return null;
+	}
 		
-		if (compteur==4) return true;
-		return false;
-	}
-	
-	/**
-	 * Test si la partie est gagnée en colonne
-	 * @param position Position à tester
-	 * @param couleur Couleur à Teset
-	 * @return True si la partie est gagnée
-	 */
-	private boolean estGagneeColonne(Position position ,EtatCase couleur)
-	{
-		int compteur=0;
-	while (this.grille.obtenirCase(position)==couleur)
-	{
-		compteur++;
-		position.changerLigne(position.obtenirLigne()+1);
-		
-	}
-	if (compteur==4) return true;
-	return false;
-	}
-	
 	/**
 	 * Test si la partie est gagnée
 	 * @param position Position à tester
 	 * @param couleur Couleur à tester
 	 * @return True si la partie est gagnée
 	 */
-	private boolean estGagnee(Position position ,EtatCase couleur)
+	private boolean estGagnee(Position position)
 	{
-		return this.estGagneeColonne(position, couleur)||this.estGagneeLigne(position, couleur);
+		for (Axe axe : Axe.values())
+			if (this.estGagneAxe(position, axe)) return true;
+		return false;
 	}
+	
+	public boolean estGagneAxe(Position position, Axe axe)
+	{
+		int nombreDeJetonsDansLaDirectionPrincipale = this.nombreDeJetonsAlignesDansUneDirection(position, axe.obtenirPrincipale());
+		int nombreDeJetonsDansLaDirectionSecondaire = this.nombreDeJetonsAlignesDansUneDirection(position, axe.obtenirSecondaire());
+		return (nombreDeJetonsDansLaDirectionPrincipale + nombreDeJetonsDansLaDirectionSecondaire + 1 >= 4);		
+	}
+	
+	private int nombreDeJetonsAlignesDansUneDirection(Position position, Direction direction)
+	{
+		int nombreDeJetonsAlignes = 0;
+		Position positionSuivante = position.voisine(direction);
+		while (true)
+		{
+			if (this.grille.estHorsDeLaGrille(positionSuivante)) 
+				break;
+			if (this.grille.obtenirCase(positionSuivante) != this.grille.obtenirCase(position))
+				break;
+			nombreDeJetonsAlignes++;
+		}
+		return nombreDeJetonsAlignes;
+	}
+
 }

@@ -9,12 +9,12 @@ public class Position
 	/**
 	 * Numéro de Ligne de la position
 	 */
-	private int numeroLigne;
+	private final int numeroLigne;
 
 	/**
 	 * Numéro de Colonne de la position
 	 */
-	private int numeroColonne;
+	private final int numeroColonne;
 	
 	/**
 	 * Permet de créer une nouvelle position
@@ -45,21 +45,8 @@ public class Position
 		return this.numeroColonne;
 	}
 	
-	/**
-	 * Permet d'attribuer une nouvelle colonne à une position
-	 * @param colonne : Nouvelle colonne
-	 */
-	public void changerColonne(int colonne)
+	public Position voisine(Direction direction)
 	{
-		this.numeroColonne=colonne;
-	}
-	
-	/**
-	 * Permet d'attribuer une nouvelle ligne à une position
-	 * @param ligne : Nouvelle ligne
-	 */
-	public void changerLigne(int ligne)
-	{
-		this.numeroLigne=ligne;
+		return new Position(this.numeroLigne+direction.obtenirDecalageLigne(), this.numeroColonne+direction.obtenirDecalageColonne());
 	}
 }

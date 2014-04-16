@@ -78,13 +78,17 @@ public class Grille
 		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++)
 		{
 			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++)
-			{
-				position.changerColonne(numeroDeColonne);
-			    position.changerLigne(numeroDeLigne);
-				puissance4EnAscii += this.obtenirCase(position);
-			}
+				puissance4EnAscii += this.obtenirCase(new Position(numeroDeLigne, numeroDeColonne));
 			puissance4EnAscii += "\n";
 		}
 		return puissance4EnAscii;
+	}
+
+	public boolean estHorsDeLaGrille(Position positionSuivante)
+	{
+		if (positionSuivante.obtenirLigne() >=0 && positionSuivante.obtenirLigne()< NOMBRE_DE_LIGNES)
+			if (positionSuivante.obtenirColonne()>=0 && positionSuivante.obtenirColonne()< NOMBRE_DE_COLONNES)
+				return true;
+		return false;
 	}
 }
