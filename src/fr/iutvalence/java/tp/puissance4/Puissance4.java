@@ -93,9 +93,8 @@ public class Puissance4
 	}
 		
 	/**
-	 * Test si la partie est gagnée
-	 * @param position Position à tester
-	 * @param couleur Couleur à tester
+	 * Permet de savoir si la partie est gagnée
+	 * @param position Position a tester
 	 * @return True si la partie est gagnée
 	 */
 	private boolean estGagnee(Position position)
@@ -105,6 +104,12 @@ public class Puissance4
 		return false;
 	}
 	
+	/**
+	 * Permet de savoir si la partie est gagnée selon un axe
+	 * @param position Position à tester
+	 * @param axe Axe a tester
+	 * @return True si la partie est gagnée
+	 */
 	public boolean estGagneAxe(Position position, Axe axe)
 	{
 		int nombreDeJetonsDansLaDirectionPrincipale = this.nombreDeJetonsAlignesDansUneDirection(position, axe.obtenirPrincipale());
@@ -112,6 +117,17 @@ public class Puissance4
 		return (nombreDeJetonsDansLaDirectionPrincipale + nombreDeJetonsDansLaDirectionSecondaire + 1 >= 4);		
 	}
 	
+	/**
+	 * @param position
+	 * @param direction
+	 * @return
+	 */
+	/**
+	 * Permet de connaitre le nombre de jetons alignés sur une direction
+	 * @param position Position d'où l'on commence à compter
+	 * @param direction Direction où l'on compte
+	 * @return Le nombre de jetons alignés
+	 */
 	private int nombreDeJetonsAlignesDansUneDirection(Position position, Direction direction)
 	{
 		int nombreDeJetonsAlignes = 0;
