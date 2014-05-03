@@ -16,7 +16,8 @@ public class LanceurPuissance4
 	 */
 	public static void main(String[] args)
 	{
-		Puissance4 puissance4 = new Puissance4();
+		Joueur[] joueurs = new Joueur[] {new JoueurAleatoire(Couleur.ROUGE), new JoueurAleatoire(Couleur.JAUNE)};
+		Puissance4 puissance4 = new Puissance4(joueurs);
 		puissance4.jouer();
 	}
 }
