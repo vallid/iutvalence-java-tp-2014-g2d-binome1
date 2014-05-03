@@ -18,21 +18,21 @@ public class Grille
 	public static final int NOMBRE_DE_COLONNES = 7;
 
 	/**
-	 * Les états des cases de la grille
+	 * Les couleurs des cases de la grille
 	 */
-	public EtatCase[][] etatsDesCases;
+	public Couleur[][] etatsDesCases;
 
 	/**
 	 * Création d'une grille vide
 	 */
 	public Grille()
 	{
-		this.etatsDesCases = new EtatCase[NOMBRE_DE_LIGNES][NOMBRE_DE_COLONNES];
+		this.etatsDesCases = new Couleur[NOMBRE_DE_LIGNES][NOMBRE_DE_COLONNES];
 
 		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++)
 			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++)
 
-				this.etatsDesCases[numeroDeLigne][numeroDeColonne] = EtatCase.VIDE;				
+				this.etatsDesCases[numeroDeLigne][numeroDeColonne] = null;				
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class Grille
 	 * @param position la position
 	 * @return l'état de la case la position donnée
 	 */
-	private EtatCase obtenirCase(Position position)
+	private Couleur obtenirCase(Position position)
 	{
 		if (position.obtenirNumeroDeLigne()<NOMBRE_DE_LIGNES && position.obtenirNumeroDeColonne()<NOMBRE_DE_COLONNES)
 		return this.etatsDesCases[position.obtenirNumeroDeLigne()][position.obtenirNumeroDeColonne()];
@@ -54,7 +54,7 @@ public class Grille
 	 * @param position la position
 	 * @param nouvelEtat le nouvel état de la case
 	 */
-	private void changerEtatCase(Position position, EtatCase nouvelEtat)
+	private void changerEtatCase(Position position, Couleur nouvelEtat)
 	{
 		// TODO traiter le cas d'erreur (débordement de grille)
 		this.etatsDesCases[position.obtenirNumeroDeLigne()][position.obtenirNumeroDeColonne()]=nouvelEtat;
@@ -86,12 +86,12 @@ public class Grille
 	 *         pleine.
 	 * 
 	 */
-	public Position poserJeton(EtatCase couleur, int numeroDeColonne)
+	public Position poserJeton(Couleur couleur, int numeroDeColonne)
 	{
 		for (int numeroDeLigne = Grille.NOMBRE_DE_LIGNES - 1; numeroDeLigne >= 0; numeroDeLigne--)
 		{
 			Position position = new Position(numeroDeLigne, numeroDeColonne);
-			if (this.obtenirCase(position) == EtatCase.VIDE)
+			if (this.obtenirCase(position) == null)
 			{
 				this.changerEtatCase(position, couleur);
 				return position;

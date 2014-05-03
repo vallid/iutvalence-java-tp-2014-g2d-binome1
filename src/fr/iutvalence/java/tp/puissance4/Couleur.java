@@ -4,20 +4,16 @@ package fr.iutvalence.java.tp.puissance4;
  * Représente les différents états possibles d'une case
  */
 
-public enum EtatCase
+public enum Couleur
 {
 	/**
-	 * La case est occupée par un jeton rouge
+	 * La couleur rouge
 	 */
 	ROUGE,
 	/**
-	 * La case est occupée par un jeton Jaune
+	 * La couleur jaune
 	 */
-	JAUNE,
-	/**
-	 * La case n'est occupée par aucun jeton
-	 */
-	VIDE;
+	JAUNE;
 
 	/**
 	 * @see java.lang.Enum#toString()
@@ -29,7 +25,6 @@ public enum EtatCase
 		if (this == JAUNE)
 			return "J";
 		else
-			return "V";
+			return " ";
 	}
-
 }
