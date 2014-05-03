@@ -16,8 +16,7 @@ public class LanceurPuissance4
 	 */
 	public static void main(String[] args)
 	{
-		Puissance4 jeu;
-		jeu = new Puissance4();
-		jeu.jouer();
+		Puissance4 puissance4 = new Puissance4();
+		puissance4.jouer();
 	}
 }
