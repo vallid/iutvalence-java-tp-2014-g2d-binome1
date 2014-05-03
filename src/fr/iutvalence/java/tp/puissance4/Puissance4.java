@@ -11,16 +11,6 @@ import java.util.Scanner;
 public class Puissance4
 {
 	/**
-	 * Le premier joueur
-	 */
-	private final Joueur joueur1;
-
-	/**
-	 * Le second joueur
-	 */
-	private final Joueur joueur2;
-
-	/**
 	 * Le plateau du jeu
 	 */
 	private final Grille grille;
@@ -31,8 +21,6 @@ public class Puissance4
 	 */
 	public Puissance4()
 	{
-		this.joueur1 = new Joueur();
-		this.joueur2 = new Joueur();
 		this.grille = new Grille();
 	}
 
