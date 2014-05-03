@@ -42,10 +42,8 @@ public class Grille
 	 */
 	public Couleur obtenirCase(Position position)
 	{
-		if (position.obtenirNumeroDeLigne()<NOMBRE_DE_LIGNES && position.obtenirNumeroDeColonne()<NOMBRE_DE_COLONNES)
+		if (this.estHorsDeLaGrille(position)) return null;
 		return this.etatsDesCases[position.obtenirNumeroDeLigne()][position.obtenirNumeroDeColonne()];
-		
-		return null;
 	}
 	
 
@@ -67,10 +65,12 @@ public class Grille
 	 */
 	public boolean estHorsDeLaGrille(Position position)
 	{
-		// TODO retourner le test, ce serait plus clair
-		if (position.obtenirNumeroDeLigne() >=0 && position.obtenirNumeroDeLigne()< NOMBRE_DE_LIGNES)
-			if (position.obtenirNumeroDeColonne()>=0 && position.obtenirNumeroDeColonne()< NOMBRE_DE_COLONNES)
-				return true;
+		if (position.obtenirNumeroDeLigne() < 0) return true;
+		if (position.obtenirNumeroDeLigne() >= NOMBRE_DE_LIGNES) return true;
+		
+		if (position.obtenirNumeroDeColonne() < 0) return true;
+		if (position.obtenirNumeroDeColonne() >= NOMBRE_DE_COLONNES) return true;
+
 		return false;
 	}
 	

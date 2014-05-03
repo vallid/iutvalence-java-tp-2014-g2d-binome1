@@ -24,13 +24,16 @@ public class AffichageConsole implements Affichage
 	@Override
 	public void afficherGrille(Grille grille)
 	{
-
 		String puissance4EnAscii = "";
 		for (int numeroDeLigne = 0; numeroDeLigne < Grille.NOMBRE_DE_LIGNES; numeroDeLigne++)
 		{
 			for (int numeroDeColonne = 0; numeroDeColonne < Grille.NOMBRE_DE_COLONNES; numeroDeColonne++)
-				puissance4EnAscii += grille.obtenirCase(new Position(
+			{
+				Couleur couleur = grille.obtenirCase(new Position(
 						numeroDeLigne, numeroDeColonne));
+				if (couleur == null) puissance4EnAscii += "-";
+				else puissance4EnAscii += couleur;
+			}
 			puissance4EnAscii += "\n";
 		}
 		System.out.println(puissance4EnAscii);
