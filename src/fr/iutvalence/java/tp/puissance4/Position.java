@@ -1,52 +1,57 @@
 package fr.iutvalence.java.tp.puissance4;
 
 /**
+ * REprésente une position sur une grille 2D
  * @author vallid
- * Position sur le plateau
  */
 public class Position
 {	
 	/**
-	 * Numéro de Ligne de la position
+	 * Numéro de ligne
 	 */
-	private final int numeroLigne;
+	private final int numeroDeLigne;
 
 	/**
-	 * Numéro de Colonne de la position
+	 * Numéro de colonne
 	 */
-	private final int numeroColonne;
+	private final int numeroDeColonne;
 	
 	/**
-	 * Permet de créer une nouvelle position
-	 * @param ligne numéro de la ligne de la position
-	 * @param colonne numéro de la colonne de la position
+	 * Créer une nouvelle position étant donnés les numéros de ligne/colonne
+	 * @param numeroDeLigne numéro de la ligne
+	 * @param numeroDeColonne numéro de la colonne
 	 */
-	public Position(int ligne, int colonne)
+	public Position(int numeroDeLigne, int numeroDeColonne)
 	{
-		this.numeroLigne=ligne;
-		this.numeroColonne=colonne;
+		this.numeroDeLigne=numeroDeLigne;
+		this.numeroDeColonne=numeroDeColonne;
 	}
 	
 	/**
-	 * Permet d'obtenir la ligne d'une position
-	 * @return ligne de la position
+	 * Permet d'obtenir le numéro de ligne
+	 * @return le numéro de ligne
 	 */
-	public int obtenirLigne()
+	public int obtenirNumeroDeLigne()
 	{
-		return this.numeroLigne;
+		return this.numeroDeLigne;
 	}
 	
 	/**
-	 * Permet d'obtenir la colonne d'une position
-	 * @return colonne de la position
+	 * Permet d'obtenir le numéro de colonne
+	 * @return le numéro de colonne
 	 */
-	public int obtenirColonne()
+	public int obtenirNumeroDeColonne()
 	{
-		return this.numeroColonne;
+		return this.numeroDeColonne;
 	}
 	
-	public Position voisine(Direction direction)
+	/**
+	 * Obtenir la position voisine dans une direction donnée
+	 * @param direction la direction
+	 * @return la position voisine dans une direction donnée
+	 */
+	public Position obtenirVoisine(Direction direction)
 	{
-		return new Position(this.numeroLigne+direction.obtenirDecalageLigne(), this.numeroColonne+direction.obtenirDecalageColonne());
+		return new Position(this.numeroDeLigne+direction.obtenirDecalageLigne(), this.numeroDeColonne+direction.obtenirDecalageColonne());
 	}
 }

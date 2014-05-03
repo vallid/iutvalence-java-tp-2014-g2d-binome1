@@ -50,8 +50,8 @@ public class Grille
 	public EtatCase obtenirCase(Position position)
 	{
 		// TODO(fait) cas d'erreur ? soit return null, soit une exception
-		if (position.obtenirLigne()<NOMBRE_DE_LIGNES && position.obtenirColonne()<NOMBRE_DE_COLONNES)
-		return this.etatsDesCases[position.obtenirLigne()][position.obtenirColonne()];
+		if (position.obtenirNumeroDeLigne()<NOMBRE_DE_LIGNES && position.obtenirNumeroDeColonne()<NOMBRE_DE_COLONNES)
+		return this.etatsDesCases[position.obtenirNumeroDeLigne()][position.obtenirNumeroDeColonne()];
 		else return null;
 	}
 	
@@ -63,7 +63,7 @@ public class Grille
 	public void changerEtatCase(Position position, EtatCase nouvelEtat)
 	{
 		// TODO (Fait) à completer
-		this.etatsDesCases[position.obtenirLigne()][position.obtenirColonne()]=nouvelEtat;
+		this.etatsDesCases[position.obtenirNumeroDeLigne()][position.obtenirNumeroDeColonne()]=nouvelEtat;
 	}
 	/**
 	 * Permet de représenter le puissance 4 en ASCII ART
@@ -86,8 +86,8 @@ public class Grille
 
 	public boolean estHorsDeLaGrille(Position positionSuivante)
 	{
-		if (positionSuivante.obtenirLigne() >=0 && positionSuivante.obtenirLigne()< NOMBRE_DE_LIGNES)
-			if (positionSuivante.obtenirColonne()>=0 && positionSuivante.obtenirColonne()< NOMBRE_DE_COLONNES)
+		if (positionSuivante.obtenirNumeroDeLigne() >=0 && positionSuivante.obtenirNumeroDeLigne()< NOMBRE_DE_LIGNES)
+			if (positionSuivante.obtenirNumeroDeColonne()>=0 && positionSuivante.obtenirNumeroDeColonne()< NOMBRE_DE_COLONNES)
 				return true;
 		return false;
 	}

@@ -131,7 +131,7 @@ public class Puissance4
 	private int nombreDeJetonsAlignesDansUneDirection(Position position, Direction direction)
 	{
 		int nombreDeJetonsAlignes = 0;
-		Position positionSuivante = position.voisine(direction);
+		Position positionSuivante = position.obtenirVoisine(direction);
 		while (true)
 		{
 			if (this.grille.estHorsDeLaGrille(positionSuivante)) 
