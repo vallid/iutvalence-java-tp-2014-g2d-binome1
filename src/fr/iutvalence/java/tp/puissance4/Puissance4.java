@@ -75,7 +75,7 @@ public class Puissance4
 	 */
 	private Position poserJeton(EtatCase couleur, int numeroDeColonne)
 	{
-		for (int numeroDeLigne = this.grille.NOMBRE_DE_LIGNES - 1; numeroDeLigne >= 0; numeroDeLigne--)
+		for (int numeroDeLigne = Grille.NOMBRE_DE_LIGNES - 1; numeroDeLigne >= 0; numeroDeLigne--)
 		{
 			Position position = new Position(numeroDeLigne, numeroDeColonne);
 			if (this.grille.obtenirCase(position) == EtatCase.VIDE)
