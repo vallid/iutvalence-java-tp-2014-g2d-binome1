@@ -14,6 +14,11 @@ public class Puissance4
 	private final Joueur[] joueurs;
 	
 	/**
+	 * L'affichage
+	 */
+	private final Affichage affichage;
+	
+	/**
 	 * Le plateau du jeu
 	 */
 	private final Grille grille;
@@ -23,10 +28,11 @@ public class Puissance4
 	 * @param joueurs les joueurs
 	 * 
 	 */
-	public Puissance4(Joueur[] joueurs)
+	public Puissance4(Joueur[] joueurs, Affichage affichage)
 	{
 		this.grille = new Grille();
 		this.joueurs = joueurs;
+		this.affichage = affichage;
 		
 	}
 
@@ -39,20 +45,20 @@ public class Puissance4
 		{
 			int offsetJoueurCourant = (numeroDuTour % 2);
 			Joueur joueurCourant = this.joueurs[offsetJoueurCourant];
-			System.out.println("Joueur "+offsetJoueurCourant+1+" : colonne ?");
+			this.affichage.afficherDemandeDeColonne(joueurCourant.obtenirCouleurDuPion());
 			while (true)
 			{
 				int numeroDeColonne = joueurCourant.obtenirColonne();
 				Position positionduJetonPose = this.grille.poserJeton(joueurCourant.obtenirCouleurDuPion(), numeroDeColonne);
 				if (positionduJetonPose == null)
 				{
-					System.out.println("Position invalide ! ");
+					this.affichage.afficherColonneInvalide();
 					continue;
 				}
-				
+				this.affichage.afficherGrille(this.grille);
 				if (this.grille.estPartieGagneeAutourDUnePosition(positionduJetonPose))
 				{
-					System.out.println("Gagne !");
+					this.affichage.afficherFinDePartie(joueurCourant.obtenirCouleurDuPion());
 					return;
 				}
 				break;

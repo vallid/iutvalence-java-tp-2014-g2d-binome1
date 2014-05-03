@@ -40,7 +40,7 @@ public class Grille
 	 * @param position la position
 	 * @return l'état de la case la position donnée
 	 */
-	private Couleur obtenirCase(Position position)
+	public Couleur obtenirCase(Position position)
 	{
 		if (position.obtenirNumeroDeLigne()<NOMBRE_DE_LIGNES && position.obtenirNumeroDeColonne()<NOMBRE_DE_COLONNES)
 		return this.etatsDesCases[position.obtenirNumeroDeLigne()][position.obtenirNumeroDeColonne()];
@@ -162,22 +162,5 @@ public class Grille
 			nombreDeJetonsAlignes++;
 		}
 		return nombreDeJetonsAlignes;
-	}
-
-	
-	/**
-	 * Obtenir une représentation en ASCII-art
-	 * @see java.lang.Object#toString()
-	 */
-	public String toString()
-	{
-		String puissance4EnAscii = "";
-		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++)
-		{
-			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++)
-				puissance4EnAscii += this.obtenirCase(new Position(numeroDeLigne, numeroDeColonne));
-			puissance4EnAscii += "\n";
-		}
-		return puissance4EnAscii;
 	}
 }
