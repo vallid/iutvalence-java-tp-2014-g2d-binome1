@@ -7,13 +7,37 @@ package fr.iutvalence.java.tp.puissance4;
  */
 public enum Direction
 {
+	/**
+	 * En haut
+	 */
 	HAUT(-1,0),
+	/**
+	 * En bas
+	 */
 	BAS(1,0),
+	/**
+	 * A gauche
+	 */
 	GAUCHE(0,-1),
+	/**
+	 * A droite
+	 */
 	DROITE(0,1),
+	/**
+	 * En haut à gauche
+	 */
 	HAUT_GAUCHE(-1,-1),
+	/**
+	 * En haut à droite
+	 */
 	HAUT_DROITE(-1,1),
+	/**
+	 * En bas à gauche
+	 */
 	BAS_GAUCHE(1,-1),
+	/**
+	 * En bas à droite
+	 */
 	BAS_DROITE(1,1);
 
 	/**
