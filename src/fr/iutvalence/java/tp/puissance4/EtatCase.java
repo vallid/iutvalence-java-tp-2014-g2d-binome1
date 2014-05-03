@@ -1,16 +1,11 @@
 package fr.iutvalence.java.tp.puissance4;
 
-// TODO(fait) écrire le commentaire
-
 /**
  * Représente les différents états possibles d'une case
  */
 
-// TODO (fait) renommer (plus explicite)
-
 public enum EtatCase
 {
-	// TODO (fait) écrire un commentaire pour chaque constante
 	/**
 	 * La case est occupée par un jeton rouge
 	 */
@@ -25,7 +20,7 @@ public enum EtatCase
 	VIDE;
 
 	/**
-	 * Attribue une représentation en ASCII à chaque état
+	 * @see java.lang.Enum#toString()
 	 */
 	public String toString()
 	{
