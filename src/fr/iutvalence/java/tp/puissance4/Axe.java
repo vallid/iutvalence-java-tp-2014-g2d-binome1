@@ -1,7 +1,7 @@
 package fr.iutvalence.java.tp.puissance4;
 
 /**
- * Liste des Axes du puissance4
+ * Enumération représentant les différents axes du plan
  * @author vallid
  *
  */
