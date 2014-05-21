@@ -25,8 +25,8 @@ public class BouttonDepotPion extends JButton
 		return this.estOccupee;
 	}
 	
-	public void poserPion()
+	public void poserPion(Couleur couleur)
 	{
-		
+		this.setIcon(couleur.toString()+".png");
 	}
 }
