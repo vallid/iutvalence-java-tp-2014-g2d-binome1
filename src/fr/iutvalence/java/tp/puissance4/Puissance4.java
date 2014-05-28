@@ -49,15 +49,23 @@ public class Puissance4
 			while (true)
 			{
 				int numeroDeColonne = joueurCourant.obtenirColonne();
-				Position positionduJetonPose = this.grille.poserJeton(joueurCourant.obtenirCouleurDuPion(), numeroDeColonne);
+				System.out.println(numeroDeColonne);
+				Position positionduJetonPose = this.grille.poserJeton(Couleur.values()[numeroDuTour%2], numeroDeColonne);
+				System.out.println(positionduJetonPose.obtenirNumeroDeLigne());
+				System.out.println(positionduJetonPose.obtenirNumeroDeColonne());
+				System.out.println(grille.obtenirCase(positionduJetonPose));
+				System.out.println("jeton posé");
+				
 				if (positionduJetonPose == null)
 				{
 					this.affichage.afficherColonneInvalide();
 					continue;
 				}
 				this.affichage.afficherGrille(this.grille);
+				System.out.println("grille affichee");
 				if (this.grille.estPartieGagneeAutourDUnePosition(positionduJetonPose))
 				{
+					System.out.println("test");
 					this.affichage.afficherFinDePartie(joueurCourant.obtenirCouleurDuPion());
 					return;
 				}

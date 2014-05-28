@@ -21,3 +21,4 @@ public class LanceurPuissance4
 		puissance4.jouer();
 	}
 }
+

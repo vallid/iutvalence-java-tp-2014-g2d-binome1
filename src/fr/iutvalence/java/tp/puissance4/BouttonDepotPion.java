@@ -1,8 +1,14 @@
 package fr.iutvalence.java.tp.puissance4;
 
-import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class BouttonDepotPion extends JButton
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+public class BouttonDepotPion extends JButton 
 {
 
 	private final int numeroDeColonne;
@@ -27,6 +33,8 @@ public class BouttonDepotPion extends JButton
 	
 	public void poserPion(Couleur couleur)
 	{
-		this.setIcon(couleur.toString()+".png");
+		this.setIcon(new ImageIcon(couleur.toString()+".png"));
 	}
+
+
 }

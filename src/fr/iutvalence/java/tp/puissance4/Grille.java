@@ -113,6 +113,7 @@ public class Grille
 		for (Axe axe : Axe.values())
 			if (this.estPartieGagneeAutourDUnePositionEtDansUnAxe(position, axe))
 				return true;
+		System.out.println("jeton posé");
 		return false;
 	}
 
@@ -152,14 +153,16 @@ public class Grille
 			Direction direction)
 	{
 		int nombreDeJetonsAlignes = 0;
-		Position positionSuivante = position.obtenirVoisine(direction);
 		while (true)
 		{
+			Position positionSuivante = position.obtenirVoisine(direction);
 			if (this.estHorsDeLaGrille(positionSuivante))
 				break;
 			if (this.obtenirCase(positionSuivante) != this.obtenirCase(position))
 				break;
 			nombreDeJetonsAlignes++;
+			position = positionSuivante;
+			
 		}
 		return nombreDeJetonsAlignes;
 	}
